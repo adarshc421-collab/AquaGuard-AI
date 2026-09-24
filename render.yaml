@@ -1,0 +1,23 @@
+services:
+  # ==============================================================================
+  # AquaGuard AI — FastAPI Backend Service (Render Web Service)
+  # ==============================================================================
+  - type: web
+    name: aquaguard-ai-backend
+    env: python
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.10.12"
+      - key: ENVIRONMENT
+        value: "production"
+      - key: FRONTEND_URL
+        sync: false
+        value: "http://localhost:5173"
+      - key: ALLOW_VERCEL_PREVIEWS
+        value: "true"

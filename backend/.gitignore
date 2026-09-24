@@ -1,0 +1,37 @@
+# Environment variables
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Temporary uploads & outputs
+static/uploads/*
+!static/uploads/.gitkeep
+static/enhanced/*
+!static/enhanced/.gitkeep
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
